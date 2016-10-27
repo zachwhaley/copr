@@ -24,3 +24,6 @@ install -p -m 444 bp4o.* ${buildroot}%{_sysconfdir}/profile.d
 %{_sysconfdir}/profile.d/bp4o.*
 
 %changelog
+* Thu Oct 27 2016 Zach Whaley <zachbwhaley@gmail.com> 0.3.2-1
+- new package built with tito
+
