@@ -15,9 +15,8 @@ A bunch of scripts to catch p4 commands, run them, and make their output better.
 %autosetup
 
 %install
+ls ..
 mkdir -p %{buildroot}%{_bindir} %{buildroot}%{_sysconfdir}/profile.d
-echo "wtf"
-ls
 for b in $(ls bin/p4-*); do
     install -p -m 755 $b %{buildroot}%{_bindir}
 done
