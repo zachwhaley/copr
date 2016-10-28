@@ -15,12 +15,12 @@ A bunch of scripts to catch p4 commands, run them, and make their output better.
 %autosetup
 
 %install
-mkdir -p %{buildroot}/%{_bindir} %{buildroot}/%{_sysconfdir}/profile.d
-for b in bin/p4-*; do
-    install -p -m 755 $b %{buildroot}/%{_bindir}
+mkdir -p %{buildroot}%{_bindir} %{buildroot}%{_sysconfdir}/profile.d
+for b in "bin/p4-*"; do
+    install -p -m 755 $b %{buildroot}%{_bindir}
 done
-for i in bp4o.*; do
-    install -p -m 444 $i %{buildroot}/%{_sysconfdir}/profile.d
+for i in "bp4o.*"; do
+    install -p -m 444 $i %{buildroot}%{_sysconfdir}/profile.d
 done
 
 %files
