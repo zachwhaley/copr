@@ -1,6 +1,6 @@
 Name: bp4o
-Version: 0.3.2
-Release: 5%{?dist}
+Version: 0.3.3
+Release: 1%{?dist}
 Summary: Better P4 Output
 License: MIT
 URL: http://zachwhaleys.website/bp4o/
@@ -26,6 +26,10 @@ install -p -m 444 bp4o.* %{buildroot}%{_sysconfdir}/profile.d
 %{_sysconfdir}/profile.d/bp4o.*
 
 %changelog
+* Fri Oct 28 2016 Zach Whaley <zachbwhaley@gmail.com> 0.3.3-1
+- Avoid finding duplicate aliases with similar names (zachbwhaley@gmail.com)
+- Set P4VERSION to the actual version of the p4 client (zachbwhaley@gmail.com)
+
 * Thu Oct 27 2016 Zach Whaley <zachbwhaley@gmail.com> 0.3.2-5
 - Remove tito in favor of manual uploads (zachbwhaley@gmail.com)
 
