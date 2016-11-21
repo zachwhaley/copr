@@ -1,6 +1,6 @@
 Name: bp4o
 Version: 0.3.3
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Better P4 Output
 License: MIT
 URL: http://zachwhaleys.website/bp4o/
@@ -15,17 +15,24 @@ A bunch of scripts to catch p4 commands, run them, and make their output better.
 %autosetup
 
 %install
-mkdir -p %{buildroot}%{_bindir} %{buildroot}%{_sysconfdir}/profile.d
+mkdir -p %{buildroot}%{_bindir}
+mkdir -p %{buildroot}%{_sysconfdir}/profile.d
+mkdir -p %{buildroot}%{_datadir}/zsh/site-functions
 install -p -m 755 bin/p4-* %{buildroot}%{_bindir}
-install -p -m 444 bp4o.* %{buildroot}%{_sysconfdir}/profile.d
+install -p -m 444 bp4o.bash %{buildroot}%{_sysconfdir}/profile.d/bp4o.sh
+install -p -m 444 bp4o.zsh %{buildroot}%{_datadir}/zsh/site-functions/bp4o
 
 %files
 %doc README.md
 %license LICENSE
 %{_bindir}/p4-*
-%{_sysconfdir}/profile.d/bp4o.*
+%{_sysconfdir}/profile.d/bp4o.sh
+%{_datadir}/zsh/site-functions/bp4o
 
 %changelog
+* Mon Nov 21 2016 Zach Whaley <zachbwhaley@gmail.com> 0.3.3-2
+- Install bp4o.zsh to zsh fpath (zachbwhaley@gmail.com)
+
 * Fri Oct 28 2016 Zach Whaley <zachbwhaley@gmail.com> 0.3.3-1
 - Avoid finding duplicate aliases with similar names (zachbwhaley@gmail.com)
 - Set P4VERSION to the actual version of the p4 client (zachbwhaley@gmail.com)
