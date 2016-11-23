@@ -1,6 +1,6 @@
 Name: bp4o
-Version: 0.3.3
-Release: 2%{?dist}
+Version: 0.4.0
+Release: 1%{?dist}
 Summary: Better P4 Output
 License: MIT
 URL: http://zachwhaleys.website/bp4o/
@@ -18,9 +18,11 @@ A bunch of scripts to catch p4 commands, run them, and make their output better.
 mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}%{_sysconfdir}/profile.d
 mkdir -p %{buildroot}%{_datadir}/zsh/site-functions
+mkdir -p %{buildroot}%{_datadir}/fish/vendor_functions.d
 install -p -m 755 bin/p4-* %{buildroot}%{_bindir}
 install -p -m 444 bp4o.bash %{buildroot}%{_sysconfdir}/profile.d/bp4o.sh
 install -p -m 444 bp4o.zsh %{buildroot}%{_datadir}/zsh/site-functions/bp4o
+install -p -m 444 bp4o.fish %{buildroot}%{_datadir}/fish/vendor_functions.d/p4.fish
 
 %files
 %doc README.md
@@ -28,8 +30,13 @@ install -p -m 444 bp4o.zsh %{buildroot}%{_datadir}/zsh/site-functions/bp4o
 %{_bindir}/p4-*
 %{_sysconfdir}/profile.d/bp4o.sh
 %{_datadir}/zsh/site-functions/bp4o
+%{_datadir}/fish/vendor_functions.d/p4.fish
 
 %changelog
+* Tue Nov 22 2016 Zach Whaley <zachbwhaley@gmail.com> 0.4.0-1
+- Add BP4O help text to 'p4 help' command (zachbwhaley@gmail.com)
+- Add support for Fish shell (zachbwhaley@gmail.com)
+
 * Mon Nov 21 2016 Zach Whaley <zachbwhaley@gmail.com> 0.3.3-2
 - Install bp4o.zsh to zsh fpath (zachbwhaley@gmail.com)
 
