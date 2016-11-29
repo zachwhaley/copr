@@ -1,5 +1,5 @@
 Name: bp4o
-Version: 0.4.0
+Version: 0.4.1
 Release: 1%{?dist}
 Summary: Better P4 Output
 License: MIT
@@ -33,6 +33,9 @@ install -p -m 444 bp4o.fish %{buildroot}%{_datadir}/fish/vendor_functions.d/p4.f
 %{_datadir}/fish/vendor_functions.d/p4.fish
 
 %changelog
+* Tue Nov 29 2016 Zach Whaley <zachbwhaley@gmail.com> 0.4.1-1
+- Fix "bad pattern" errors for Zsh 5.0 (zachbwhaley@gmail.com)
+
 * Tue Nov 22 2016 Zach Whaley <zachbwhaley@gmail.com> 0.4.0-1
 - Add BP4O help text to 'p4 help' command (zachbwhaley@gmail.com)
 - Add support for Fish shell (zachbwhaley@gmail.com)
