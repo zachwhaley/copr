@@ -1,5 +1,5 @@
 Name: bp4o
-Version: 1.1.0
+Version: 1.1.1
 Release: 1%{?dist}
 Summary: Better P4 Output
 License: MIT
@@ -33,6 +33,9 @@ install -p -m 444 bp4o.fish %{buildroot}%{_datadir}/fish/vendor_functions.d/p4.f
 %{_datadir}/fish/vendor_functions.d/p4.fish
 
 %changelog
+* Fri Jan 06 2017 Zach Whaley <zachbwhaley@gmail.com> 1.1.1-1
+- Version 1.1.1 (zachbwhaley@gmail.com)
+
 * Fri Dec 16 2016 Zach Whaley <zachbwhaley@gmail.com> 1.1.0-1
 - Version 1.1.0 (zachbwhaley@gmail.com)
 
